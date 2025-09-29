@@ -62,6 +62,7 @@ MTequations := [
     and returns the number field generates by those periods     */
 KeA := CyclotomicField(15);
 for If in MTequations do 
+    "Computing the period of the MT eqaution: ", If;
     period := &*[ elementary_period[i] : i in If ] / (2 * Pi(CC) * CC.1)^2;
     mu := MinimalPolynomialExtra(period, RationalsExtra(prec));
     if #Roots(mu, KeA) eq 0 then
