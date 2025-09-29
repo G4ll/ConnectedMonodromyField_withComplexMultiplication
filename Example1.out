@@ -35,3 +35,9 @@ Total time: 90.059 seconds, Total memory usage: 64.12MB
 [Interrupted]
 > load "Example1.m";
 Loading "Example1.m"
+Runtime error: Failed to find minimal polynomial using LLL. Try increasing the 
+precision.
+> load "Example1.m";
+Loading "Example1.m"
+Runtime error: Failed to find minimal polynomial using LLL. Try increasing the 
+precision.

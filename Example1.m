@@ -11,7 +11,8 @@ SetLogFile("Example1.out");
 
 /* ----------- setup ------------ */
 Q := Rationals();
-CC := ComplexField(1000);
+prec := 5000;
+CC := ComplexField(prec);
 P<x> := PolynomialRing(Q);
 
 f := x^15+1;
@@ -21,7 +22,7 @@ f := x^15+1;
 /*  This is the integration bit:
     we compute the integrals \int_\sigma \omega_i
     for the eigenbasis \omega_i = x^{i-1} dx/y.     */
-R := RealField(1000);
+R := RealField(prec);
 h := R!(2^-10);
 N := Ceiling(7.2/h);
 A_DE, W_DE := TanhSinhIntegrationPoints(N,h);
@@ -62,7 +63,7 @@ MTequations := [
 KeA := CyclotomicField(15);
 for If in MTequations do 
     period := &*[ elementary_period[i] : i in If ] / (2 * Pi(CC) * CC.1)^2;
-    mu := MinimalPolynomialExtra(period, RationalsExtra(1000));
+    mu := MinimalPolynomialExtra(period, RationalsExtra(prec));
     if #Roots(mu, KeA) eq 0 then
         "The equation", f, "gives a period not in Q(zeta_15)";
         KeA := Compositum(KeA, NumberField(mu));
