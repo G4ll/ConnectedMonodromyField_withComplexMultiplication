@@ -1,0 +1,48 @@
+Computing period matrix...
+------------------
+STEP 1 OK!
+------------------
+[* [*
+    Mapping from: FldNum: E to FldNum: F,
+    Mapping from: FldNum: E to FldNum: F,
+    Mapping from: FldNum: E to FldNum: F,
+    Mapping from: FldNum: E to FldNum: F
+*] *]
+------------------
+STEP 2 OK!
+------------------
+Computing reflex field...
+Computing reflex norm matrix...
+Computing norm matrix...
+Computing equations for MT group...
+[
+    ( 1  0  0 -1  0 -1  1  0),
+    ( 0  1  0 -1  0  1  0 -1),
+    ( 0  0  1 -1  0  0  1 -1),
+    ( 0  0  0  0  1  1 -1 -1)
+]
+------------------
+STEP 3 OK!
+------------------
+------------------
+true
+Number Field with defining polynomial x^6 + 24*x^5 + 300*x^4 + 2032*x^3 + 
+    7680*x^2 + 9216*x + 20544 over the Rational Field
+------------------
+false
+Number Field with defining polynomial x^3 + 24*x^2 + 144*x + 64 over the 
+Rational Field
+------------------
+false
+Number Field with defining polynomial x^3 + 24*x^2 + 144*x + 64 over the 
+Rational Field
+------------------
+true
+Number Field with defining polynomial x^6 + 24*x^5 + 300*x^4 + 2032*x^3 + 
+    7680*x^2 + 9216*x + 20544 over the Rational Field
+------------------
+Small checks...
+The compositum k.E* is contained in F: true Mapping from: FldNum: K to FldNum: F
+The field k is contained in E*: true Mapping from: FldNum: K to FldNum: Estar
+Checking irreducibility of CM type...
+------------------
