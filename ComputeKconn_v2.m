@@ -11,17 +11,17 @@ R<x,y> := PolynomialRing(QQ,2);
 
 /* Pick your favourite degenerate CM superelliptic curve:
     this file cannot handle CM-algebras with isomorphic factors. */
-f := x^4-x^5-y^12;
-r := 1;
-f := x^2*(x^2-1)^(2*r)*(x^2+1)^(2*r^2)-y^7;
+//f := x^4-x^5-y^12;
+//r := 1;
+//f := x^2*(x^2-1)^(2*r)*(x^2+1)^(2*r^2)-y^7;
 //f1 := x^9+1-y^2;
-//f2 := x^15+1-y^2;
+f := x^15+1-y^2;
 //f5 := x^9 -2*x^8 - 8*x^7 + 16*x^6 + 20*x^5 - 40*x^4 - 16*x^3 + 32*x^2 + 2*x - 4 - y^2;
 
 
 /* ------------------- STEP 0 ----------------------------*/
 // Compute the Jacobian's period matrix
-SetLogFile("Example2_test1.out");
+SetLogFile("Example1_method2.out");
 "Computing period matrix...";
 X := Curve(AffineSpace(R), f);
 Xproj := ProjectiveClosure(X);

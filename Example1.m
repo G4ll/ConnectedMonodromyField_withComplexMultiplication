@@ -11,11 +11,12 @@ SetLogFile("Example1.out");
 
 /* ----------- setup ------------ */
 Q := Rationals();
-prec := 5000;
+prec := 1000;
+QQ := RationalsExtra(prec);
 CC := ComplexField(prec);
 P<x> := PolynomialRing(Q);
 
-f := x^15+1;
+ff := x^15+1;
 
 
 /* -------- integration --------- */
@@ -23,7 +24,7 @@ f := x^15+1;
     we compute the integrals \int_\sigma \omega_i
     for the eigenbasis \omega_i = x^{i-1} dx/y.     */
 R := RealField(prec);
-h := R!(2^-10);
+h := R!(2^-20);
 N := Ceiling(7.2/h);
 A_DE, W_DE := TanhSinhIntegrationPoints(N,h);
 
@@ -36,7 +37,7 @@ function f(j, z)
 end function;
 elementary_period := [];
 for j in [1..14] do
-    elementary_integral := 1/2 * (EndPoint1-EndPoint0) * &+[ W_DE[k] * f(j, A_DE[k]) : k in [1..2*N+1] ]; // the funny-looking factor in front is supposed to come from the change of variables formula for integrals
+    elementary_integral := 1/2 * (EndPoint1-EndPoint0) * &+[ W_DE[k] * f(j-1, A_DE[k]) : k in [1..2*N+1] ]; // the funny-looking factor in front is supposed to come from the change of variables formula for integrals
     Append(~elementary_period, elementary_integral);
 end for;
 
@@ -46,15 +47,15 @@ end for;
     from Example 4.2.9 in our previous work
     "Monodromy groups and exceptional Hodge classes, I: Fermat Jacobians" */
 MTequations := [
-        [1, 14, 8, 7],
-        [2, 13, 8, 7],
-        [3, 12, 8, 7],
-        [4, 11, 8, 7],
-        [5, 10, 8, 7],
-        [6,  9, 8, 7],
-        [9, 12, 7, 2],
-        [11, 12, 6, 1],
-        [10,12,7,1]
+        //[ 1, 14, 8, 7],
+        //[ 2, 13, 8, 7],
+        //[ 3, 12, 8, 7],
+        //[ 4, 11, 8, 7],
+        //[ 5, 10, 8, 7],
+        //[ 6,  9, 8, 7],
+        //[ 9, 12, 7, 2],
+        //[11, 12, 6, 1],
+        [10, 12, 7, 1]
     ];
 
 /*  This bit omputes the periods associated
@@ -64,7 +65,7 @@ KeA := CyclotomicField(15);
 for If in MTequations do 
     "Computing the period of the MT eqaution: ", If;
     period := &*[ elementary_period[i] : i in If ] / (2 * Pi(CC) * CC.1)^2;
-    mu := MinimalPolynomialExtra(period, RationalsExtra(prec));
+    mu := MinimalPolynomialExtra(period, QQ);
     if #Roots(mu, KeA) eq 0 then
         "The equation", f, "gives a period not in Q(zeta_15)";
         KeA := Compositum(KeA, NumberField(mu));

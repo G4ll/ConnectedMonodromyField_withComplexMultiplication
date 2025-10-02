@@ -1,0 +1,59 @@
+Computing period matrix...
+Computing CM field...
+The Galois closure F is the Number Field with defining polynomial x^8 + x^7 - 
+    x^5 - x^4 - x^3 + x + 1 over the Rational Field
+------------------
+STEP 1 OK!
+------------------
+Computing CM type...
+[*
+    [
+        Mapping from: Number Field with defining polynomial x^2 + x + 1 over the
+        Rational Field to FldNum: F
+    ],
+    [
+        Mapping from: Number Field with defining polynomial x^4 + x^3 + x^2 + x 
+            + 1 over the Rational Field to FldNum: F,
+        Mapping from: Number Field with defining polynomial x^4 + x^3 + x^2 + x 
+            + 1 over the Rational Field to FldNum: F
+    ],
+    [
+        Mapping from: FldNum: E to FldNum: F,
+        Mapping from: FldNum: E to FldNum: F,
+        Mapping from: FldNum: E to FldNum: F,
+        Mapping from: FldNum: E to FldNum: F
+    ]
+*]
+------------------
+STEP 2 OK!
+------------------
+Computing reflex field...
+Computing reflex norm matrix...
+Computing norm matrix...
+Computing equations for MT group...
+[
+    ( 1  0  0  0  0  1  0  0  0 -1  0 -1  0  0),
+    ( 0  1  0  0  0  1  0  0  0  0 -1 -1 -1  1),
+    ( 0  0  1  0  0  1  0  0  0  0 -1 -1  0  0),
+    ( 0  0  0  1  0  1  0  0  0  0  0 -1 -1  0),
+    ( 0  0  0  0  1  1  0  0  0 -1 -1 -1  0  1),
+    ( 0  0  0  0  0  2  0  0  0 -1  0 -1 -1  1),
+    ( 0  0  0  0  0  0  1  0  0  0 -1 -1  0  1),
+    ( 0  0  0  0  0  0  0  1  0  0 -1 -1  1  0),
+    ( 0  0  0  0  0  0  0  0  1  1 -1 -1  0  0)
+]
+------------------
+STEP 3 OK!
+------------------
+Computing periods...
+Ding!
+------------------
+COMPUTATION SUCCESSFUL!
+------------------
+K(e_J) is Number Field with defining polynomial x^16 + 5*x^15 + 14*x^14 + 
+    30*x^13 + 57*x^12 + 100*x^11 + 157*x^10 + 215*x^9 + 250*x^8 + 240*x^7 + 
+    183*x^6 + 110*x^5 + 57*x^4 + 30*x^3 + 16*x^2 + 5*x + 1 over the Rational 
+Field
+Is the variety nondegenerate? false
+
+Total time: 2163.809 seconds, Total memory usage: 32.09MB
